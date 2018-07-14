@@ -8,7 +8,8 @@ import { InformationComponent } from './information/information.component';
 import { ProfileComponent } from './profile/profile.component';
 import { PaymentComponent } from './payment/payment.component';
 import { CongratulationsComponent } from './congratulations/congratulations.component';
-
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {ButtonModule} from 'primeng/button';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,11 +17,13 @@ import { CongratulationsComponent } from './congratulations/congratulations.comp
     InformationComponent,
     ProfileComponent,
     PaymentComponent,
-    CongratulationsComponent
+    CongratulationsComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    ButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
