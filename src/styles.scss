@@ -1,1 +1,47 @@
-/* You can add global styles to this file, and also import other style files */
+//font-awsome
+$fa-font-path: "../node_modules/font-awesome/fonts";
+@import "../node_modules/font-awesome/scss/font-awesome.scss";
+// font
+@import url(//fonts.googleapis.com/earlyaccess/notosanstc.css);
+* {
+  font-family: "Noto Sans TC";
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+$deepBlue:#0275d8;
+$lightBlue:#bee1ff;
+$orange:#f5a623;
+$black:#000000;
+$white:#ffffff;
+$gray:#9b9b9b;
+
+.title{
+  font-weight: lighter;
+  font-size: 48px;
+  width: 100%;
+  text-align: center;
+}
+.subtitle{
+  font-weight: lighter;
+  font-size: 24px;
+  width: 100%;
+  text-align: center;
+}
+.form{
+  font-size: 20px;
+}
+.lable{
+  font-size: 14px;
+}
+//
+.container{
+  width: 600px;
+  margin: 0 auto;
+  .nav-bar{
+    width: 100%;
+    border-top: 3px solid $deepBlue;
+    height: 1px;
+  }
+}
+

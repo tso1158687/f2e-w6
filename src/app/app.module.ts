@@ -10,6 +10,9 @@ import { PaymentComponent } from './payment/payment.component';
 import { CongratulationsComponent } from './congratulations/congratulations.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ButtonModule} from 'primeng/button';
+import { ReactiveFormsModule } from '@angular/forms';
+import {InputTextModule} from 'primeng/inputtext';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +27,8 @@ import {ButtonModule} from 'primeng/button';
     AppRoutingModule,
     BrowserAnimationsModule,
     ButtonModule,
+    ReactiveFormsModule,
+    InputTextModule
   ],
   providers: [],
   bootstrap: [AppComponent]
