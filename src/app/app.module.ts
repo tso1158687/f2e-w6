@@ -12,7 +12,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ButtonModule} from 'primeng/button';
 import { ReactiveFormsModule } from '@angular/forms';
 import {InputTextModule} from 'primeng/inputtext';
-
+import {TooltipModule} from 'primeng/tooltip';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +28,8 @@ import {InputTextModule} from 'primeng/inputtext';
     BrowserAnimationsModule,
     ButtonModule,
     ReactiveFormsModule,
-    InputTextModule
+    InputTextModule,
+    TooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]
