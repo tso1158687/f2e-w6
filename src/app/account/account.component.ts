@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { WSValidator } from '../validator';
+
 @Component({
   selector: 'app-account',
   templateUrl: './account.component.html',
@@ -23,6 +25,6 @@ export class AccountComponent implements OnInit {
       account: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required]],
       repassword: ['', [Validators.required]]
-    });
+    }, { validator: WSValidator.match('password', 'repassword') });
   }
 }
