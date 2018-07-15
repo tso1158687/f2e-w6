@@ -16,7 +16,6 @@
     </span>
   </div>
   <div class="ui-g">
-    {{accountForm.get}}
     <div class="text-description">確認密碼</div>
     <input formControlName="repassword" class="full" type="password" placeholder="Keyword" pInputText pTooltip="Enter your username" tooltipPosition="right" tooltipEvent="focus"/>
     <span class="invalid-icon">
@@ -27,4 +26,4 @@
     <button [disabled]="accountForm.invalid" class="full" pButton type="button" label="下一步" routerLink="/information"></button>
   </div>
 </form>
-<p>Form status: {{ accountForm.status | json }}</p>
+<p>Street value: {{ accountForm.get('password').status}}</p>
