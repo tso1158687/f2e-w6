@@ -10,7 +10,7 @@ import { PaymentComponent } from './payment/payment.component';
 import { CongratulationsComponent } from './congratulations/congratulations.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ButtonModule} from 'primeng/button';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {InputTextModule} from 'primeng/inputtext';
 import {TooltipModule} from 'primeng/tooltip';
 @NgModule({
@@ -28,6 +28,7 @@ import {TooltipModule} from 'primeng/tooltip';
     BrowserAnimationsModule,
     ButtonModule,
     ReactiveFormsModule,
+    FormsModule,
     InputTextModule,
     TooltipModule
   ],

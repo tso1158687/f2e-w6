@@ -1,6 +1,27 @@
 <div class="title">建立帳號</div>
 <div class="subtitle">很高興見到你!</div>
+<form [formGroup]='accountForm'>
 <div class="ui-g">
+  <div class="text-description">帳號</div>
+  <input formControlName="account" class="full" type="text" placeholder="Keyword" pInputText pTooltip="Enter your username" tooltipPosition="right" tooltipEvent="focus"/>
+  <span class="invalid-icon">
+    <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+  </span>
+</div>
+<div class="ui-g">
+  <div class="text-description">密碼</div>
+  <input formControlName="password" class="full" type="text" placeholder="Keyword" pInputText pTooltip="Enter your username" tooltipPosition="right" tooltipEvent="focus"/>
+  <span class="invalid-icon">
+    <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+  </span>
+</div><div class="ui-g">
+  <div class="text-description">確認密碼</div>
+  <input formControlName="repassword" class="full" type="text" placeholder="Keyword" pInputText pTooltip="Enter your username" tooltipPosition="right" tooltipEvent="focus"/>
+  <span class="invalid-icon">
+    <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+  </span>
+</div>
+<!-- <div class="ui-g">
   <span class="ui-float-label full">
     <input id="float-input" type="text" size="30" pInputText class="full">
     <label for="float-input">帳號</label>
@@ -17,9 +38,9 @@
     <input id="float-input" type="text" size="30" pInputText class="full">
     <label for="float-input">確認密碼</label>
   </span>
-</div>
+</div> -->
 <div class="ui-g">
-  <button class="full" pButton type="button" label="下一步" routerLink="/information"></button>
+  <button [disabled]="accountForm.invalid" class="full" pButton type="button" label="下一步" routerLink="/information"></button>
 </div>
-
+</form>
 

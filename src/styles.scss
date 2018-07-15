@@ -55,7 +55,7 @@ $gray:#9b9b9b;
       width: 100%;
       height: 2px;
       margin: auto;
-      background-color: #bee1ff;
+      background-color: $lightBlue;
       top: 0;
       bottom: 0;
       left: 0;
@@ -86,7 +86,8 @@ $gray:#9b9b9b;
 }
 
 .ui-g {
-  margin-top: 40px;
+  // margin-top: 40px;
+  margin-top:10px;
 }
 
 .full {
@@ -95,15 +96,30 @@ $gray:#9b9b9b;
 
 .text-description {
   width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .invalid-icon {
   position: relative;
-  right: 20px;
-  top: 1px;
+  right: -95%;
+  top: -38px;
+  // position: relative;
+  // right: 20px;
+  // top: 1px;
   color: $orange;
 }
 
 .ui-tooltip-text.ui-shadow.ui-corner-all {
   background-color: $orange;
+}
+input.ng-dirty.ng-invalid {
+  border-color:$orange;
+}
+input{
+  border-width:2px !important;
+  height:52px;
+}
+.ui-corner-all{
+  border-radius:8px;
 }
