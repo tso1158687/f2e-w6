@@ -20,7 +20,7 @@ export class AccountComponent implements OnInit {
   initForm() {
     // 4.將表格實體化
     this.accountForm = this.fb.group({
-      account: ['', [Validators.required, Validators.minLength(4)]],
+      account: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required]],
       repassword: ['', [Validators.required]]
     });

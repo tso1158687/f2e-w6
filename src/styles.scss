@@ -119,7 +119,20 @@ input.ng-dirty.ng-invalid {
 input{
   border-width:2px !important;
   height:52px;
+  padding-left:10px !important;
 }
 .ui-corner-all{
   border-radius:8px;
 }
+.cong-large{
+  font-size: 15em;
+  margin: 0 auto;
+  color: $deepBlue;
+}
+.ui-inputtext.ng-dirty.ng-invalid{
+  border-bottom-color:$orange;
+}
+// .congratulation{
+//   width: 100%;
+//   height: auto;
+// }
