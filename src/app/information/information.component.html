@@ -1,53 +1,60 @@
 <div class="title">一般資訊</div>
 <div class="subtitle">告訴我們你是誰!</div>
-<div class="ui-g">
-  <div class="ui-g-6">
-    <div class="text-description">姓名(選填)</div>
-    <input class="full" type="text" placeholder="Keyword" pInputText pTooltip="Enter your username" tooltipPosition="right" tooltipEvent="focus"
-    />
-    <span class="invalid-icon">
-      <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
-    </span>
-  </div>
-  <div class="ui-g-6">
-    <div class="text-description">電話*</div>
-    <input class="full" type="text" placeholder="Keyword" pInputText pTooltip="Enter your username" tooltipPosition="right" tooltipEvent="focus"
-    />
-    <span class="invalid-icon">
-      <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
-    </span>
-  </div>
-</div>
-<div class="ui-g">
-  <div class="text-description">生日(選填)</div>
-  <div class="ui-g-4">
-    <input class="full" type="text" placeholder="Keyword" pInputText pTooltip="Enter your username" tooltipPosition="right" tooltipEvent="focus"
-    />
-  </div>
-  <div class="ui-g-4">
-    <input class="full" type="text" placeholder="Keyword" pInputText pTooltip="Enter your username" tooltipPosition="right" tooltipEvent="focus"
-    />
-  </div>
-  <div class="ui-g-4">
-    <input class="full" type="text" placeholder="Keyword" pInputText pTooltip="Enter your username" tooltipPosition="right" tooltipEvent="focus"
-    />
-  </div>
-</div>
-<div class="ui-g">
-    <div class="text-description">地址</div>
-  <div class="ui-g-6">
-      <input class="full" type="text" placeholder="Keyword" pInputText pTooltip="Enter your username" tooltipPosition="right" tooltipEvent="focus"
+<form [formGroup]='infoForm'>
+  <div class="ui-g">
+    <div class="ui-g-6">
+      <div class="text-description">姓名(選填)</div>
+      <input formControlName='name' class="full" type="text" placeholder="王大明" pInputText/>
+    </div>
+    <div class="ui-g-6">
+      <div class="text-description">電話*</div>
+      <input formControlName='phone' class="full" type="text" placeholder="0912345678" pInputText pTooltip="請輸入行動電話號碼" tooltipPosition="right" tooltipEvent="focus"
       />
+      <span class="invalid-icon" *ngIf="infoForm.get('phone').invalid && infoForm.get('phone').touched">
+        <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+      </span>
+    </div>
   </div>
-  <div class="ui-g-6">
-      <input class="full" type="text" placeholder="Keyword" pInputText pTooltip="Enter your username" tooltipPosition="right" tooltipEvent="focus"
+  <div class="ui-g">
+    <div class="text-description">生日(選填)</div>
+    <div class="ui-g-4">
+      <input formControlName='birYear' class="full" type="text" placeholder="YYYY" pInputText pTooltip="請輸入數字" tooltipPosition="right" tooltipEvent="focus"
       />
-  </div>
-  <div class="ui-g-12">
-      <input class="full" type="text" placeholder="Keyword" pInputText pTooltip="Enter your username" tooltipPosition="right" tooltipEvent="focus"
+    </div>
+    <div class="ui-g-4">
+      <input formControlName='birMonth' class="full" type="text" placeholder="MM" pInputText pTooltip="請輸入數字" tooltipPosition="right" tooltipEvent="focus"
       />
+    </div>
+    <div class="ui-g-4">
+      <input formControlName='birDate' class="full" type="text" placeholder="DD" pInputText pTooltip="請輸入數字" tooltipPosition="right" tooltipEvent="focus"
+      />
+    </div>
   </div>
-</div>
-<div class="ui-g">
-  <button class="full" pButton type="button" label="下一步" routerLink="/profile"></button>
-</div>
+  <div class="ui-g">
+    <div class="text-description">地址*</div>
+    <div class="ui-g-6">
+      <input formControlName='city' class="full" type="text" placeholder="縣市" pInputText pTooltip="請輸入縣市" tooltipPosition="right" tooltipEvent="focus"
+      />
+      <span class="invalid-icon" *ngIf="infoForm.get('city').invalid && infoForm.get('city').touched">
+        <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+      </span>
+    </div>
+    <div class="ui-g-6">
+      <input formControlName='dist' class="full" type="text" placeholder="鄉鎮市區" pInputText pTooltip="請輸入鄉鎮市區" tooltipPosition="right" tooltipEvent="focus"
+      />
+      <span class="invalid-icon" *ngIf="infoForm.get('dist').invalid && infoForm.get('dist').touched">
+        <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+      </span>
+    </div>
+    <div class="ui-g-12">
+      <input formControlName='addressDetail' class="full" type="text" placeholder="詳細地址" pInputText pTooltip="請輸入詳細地址" tooltipPosition="right" tooltipEvent="focus"
+      />
+      <span class="invalid-icon" *ngIf="infoForm.get('addressDetail').invalid && infoForm.get('addressDetail').touched">
+        <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+      </span>
+    </div>
+  </div>
+  <div class="ui-g">
+    <button [disabled]="infoForm.invalid" class="full" pButton type="button" label="下一步" routerLink="/profile"></button>
+  </div>
+</form>

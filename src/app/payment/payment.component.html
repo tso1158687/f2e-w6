@@ -1,50 +1,59 @@
 <div class="title">付款資訊</div>
 <div class="subtitle">新增您的付款資訊</div>
-<div class="ui-g">
-  <div class="ui-g-12">
-    <div class="text-description">卡號</div>
-    <input class="full" type="text" placeholder="Keyword" pInputText pTooltip="Enter your username" tooltipPosition="right" tooltipEvent="focus"
-    />
-    <span class="invalid-icon">
-      <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
-    </span>
+<form [formGroup]='paymentForm'>
+  <div class="ui-g">
+    <div class="ui-g-12">
+      <div class="text-description">卡號</div>
+      <input formControlName='number' class="full" type="text" placeholder="1234 5678 9012 3456" pInputText pTooltip="請輸入卡號" tooltipPosition="right" tooltipEvent="focus"
+      />
+      <span class="invalid-icon" *ngIf="paymentForm.get('number').invalid && paymentForm.get('number').touched">
+        <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+      </span>
+    </div>
   </div>
-</div>
-<div class="ui-g">
-  <div class="ui-g-6">
-    <div class="text-description">持卡人姓名</div>
-    <input class="full" type="text" placeholder="Keyword" pInputText pTooltip="Enter your username" tooltipPosition="right" tooltipEvent="focus"
-    />
-    <span class="invalid-icon">
-      <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
-    </span>
+  <div class="ui-g">
+    <div class="ui-g-6">
+      <div class="text-description">持卡人姓名</div>
+      <input formControlName='name' class="full" type="text" pInputText pTooltip="請輸入持卡人姓名" tooltipPosition="right" tooltipEvent="focus" />
+      <span class="invalid-icon" *ngIf="paymentForm.get('name').invalid && paymentForm.get('name').touched">
+        <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+      </span>
+    </div>
+    <div class="ui-g-6">
+      <div class="text-description">發卡銀行</div>
+      <input formControlName="bank" class="full" type="text" pInputText pTooltip="請輸入發卡銀行" tooltipPosition="right" tooltipEvent="focus" />
+      <span class="invalid-icon" *ngIf="paymentForm.get('bank').invalid && paymentForm.get('bank').touched">
+        <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+      </span>
+    </div>
   </div>
-  <div class="ui-g-6">
-    <div class="text-description">發卡銀行</div>
-    <input class="full" type="text" placeholder="Keyword" pInputText pTooltip="Enter your username" tooltipPosition="right" tooltipEvent="focus"
-    />
-    <span class="invalid-icon">
-      <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
-    </span>
-  </div>
-</div>
-<div class="ui-g">
-  <div class="ui-g-4">
+  <div class="ui-g">
+    <div class="ui-g-4">
       <div class="text-description">CVV</div>
-      <input class="full" type="text" placeholder="Keyword" pInputText pTooltip="Enter your username" tooltipPosition="right" tooltipEvent="focus"
+      <input formControlName="CVV" class="full" type="text" placeholder="123" pInputText pTooltip="請輸入CVV" tooltipPosition="right" tooltipEvent="focus"
       />
-  </div>
-  <div class="ui-g-4">
+      <span class="invalid-icon" *ngIf="paymentForm.get('CVV').invalid && paymentForm.get('CVV').touched">
+        <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+      </span>
+    </div>
+    <div class="ui-g-4">
       <div class="text-description">到期日</div>
-      <input class="full" type="text" placeholder="Keyword" pInputText pTooltip="Enter your username" tooltipPosition="right" tooltipEvent="focus"
+      <input formControlName="MM" class="full" type="text" placeholder="MM" pInputText pTooltip="請輸入到期月份" tooltipPosition="right" tooltipEvent="focus"
       />
-  </div>
-  <div class="ui-g-4">
-      <div class="text-description">到期日</div>
-      <input class="full" type="text" placeholder="Keyword" pInputText pTooltip="Enter your username" tooltipPosition="right" tooltipEvent="focus"
+      <span class="invalid-icon" *ngIf="paymentForm.get('MM').invalid && paymentForm.get('MM').touched">
+        <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+      </span>
+    </div>
+    <div class="ui-g-4">
+      <div class="text-description">.</div>
+      <input formControlName="DD" class="full" type="text" placeholder="DD" pInputText pTooltip="請輸入到期日期" tooltipPosition="right" tooltipEvent="focus"
       />
+      <span class="invalid-icon" *ngIf="paymentForm.get('DD').invalid && paymentForm.get('DD').touched">
+        <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+      </span>
+    </div>
   </div>
-</div>
-<div class="ui-g">
-  <button class="full" pButton type="button" label="完成" routerLink="/congratulations"></button>
-</div>
+  <div class="ui-g">
+    <button [disabled]="paymentForm.invalid" class="full" pButton type="button" label="完成" routerLink="/congratulations"></button>
+  </div>
+</form>

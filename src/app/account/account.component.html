@@ -3,22 +3,24 @@
 <form [formGroup]='accountForm'>
   <div class="ui-g">
     <div class="text-description">帳號</div>
-    <input formControlName="account" class="full" type="text" placeholder="Keyword" pInputText pTooltip="無效的email" tooltipPosition="right" tooltipEvent="focus"/>
-    <span class="invalid-icon">
+    <!-- {{accountForm.get('account').valid && accountForm.get('account').untouched}} -->
+    <!-- <input formControlName="account" class="full" type="text" placeholder="example@example.com" pInputText [tooltipDisabled]="accountForm.get('account').valid" pTooltip="輸入有效的email" tooltipPosition="right" tooltipEvent="focus"/> -->
+    <input formControlName="account" class="full" type="text" placeholder="example@example.com" pInputText pTooltip="輸入有效的email" tooltipPosition="right" tooltipEvent="focus"/>
+    <span class="invalid-icon" *ngIf="accountForm.get('account').invalid && accountForm.get('account').touched">
       <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
     </span>
   </div>
   <div class="ui-g">
     <div class="text-description">密碼</div>
-    <input formControlName="password" class="full" type="password" placeholder="最少8位數" pInputText pTooltip="Enter your username" tooltipPosition="right" tooltipEvent="focus"/>
-    <span class="invalid-icon">
+    <input formControlName="password" class="full" type="password" placeholder="最少8位數" pInputText pTooltip="最少8位數" tooltipPosition="right" tooltipEvent="focus"/>
+    <span class="invalid-icon" *ngIf="accountForm.get('password').invalid && accountForm.get('password').touched">
       <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
     </span>
   </div>
   <div class="ui-g">
     <div class="text-description">確認密碼</div>
-    <input formControlName="repassword" class="full" type="password" placeholder="Keyword" pInputText pTooltip="Enter your username" tooltipPosition="right" tooltipEvent="focus"/>
-    <span class="invalid-icon">
+    <input formControlName="repassword" class="full" type="password" placeholder="再輸入密碼" pInputText pTooltip="密碼需一致" tooltipPosition="right" tooltipEvent="focus"/>
+    <span class="invalid-icon" *ngIf="accountForm.get('repassword').invalid && accountForm.get('repassword').touched">
       <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
     </span>
   </div>
@@ -26,4 +28,5 @@
     <button [disabled]="accountForm.invalid" class="full" pButton type="button" label="下一步" routerLink="/information"></button>
   </div>
 </form>
-<p>Street value: {{ accountForm.get('password').status}}</p>
+<!-- <p>Street value: {{ accountForm.get('password').status}}</p>
+{{accountForm.get('password').valid}} -->
